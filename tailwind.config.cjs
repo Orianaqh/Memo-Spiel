@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       colors: {
         'green': '#eddea4'
+      },
+      boxShadow: {
+        standard: "2px 2px 0px rgba(2, 2, 2, 1)",
       }
     },
   },

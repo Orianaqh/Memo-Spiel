@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Card from './Card'
 import {images} from './import'
+import { TbReload } from 'react-icons/tb';
 
 const Box = () => {
 
@@ -73,11 +74,22 @@ const Box = () => {
     resetCards();
   };
 
+  
   return (
-    <div className='flex-col flex justify-center items-center'>
-      <p>failed attempts: {attempts}</p>
+    <div className=''>
+    {/* fail and new game */}
+      <div className='flex flex-row justify-end items-end gap-3 pb-5 pr-5'>
+        <h2 className='text-white text-5xl font-black w-full pl-5'>MEMO</h2>
+        <div className='flex flex-col justify-center items-center'>
+        <p className='w-full text-white font-black text-xs text-center'>failed:</p>
+        <p className='text-black bg-white p-2 rounded-md h-[36px] w-[36px] flex justify-center items-center font-black text-xl'>{attempts}</p>
+        </div>
+        <button className='bg-white p-2 rounded-md text-xl'
+        ><TbReload/></button>
+      </div>
 
-      <div className='border-2 border-black w-[57%] h-min-screen flex flex-wrap justify-center items-center'>
+    {/* Cards */}
+      <div className='border-[0.5rem] rounded-3xl bg-white border-white w-[700px] p-5 flex flex-wrap justify-center items-center'>
       {
         cards.map((card, index) => (
           <Card
@@ -92,10 +104,12 @@ const Box = () => {
         ))
       }
       </div>
-{/* 
-      <button
-        onClick={}
-      >new game</button> */}
+
+    {/* Sentences */}
+    {/* <div className='text-white'>
+      lass uns spielen!
+    </div> */}
+
     </div>
   )
 }

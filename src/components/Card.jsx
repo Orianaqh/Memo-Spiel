@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
-import backFace from '../assets/images/image8.jpeg'
+import backFace from '../assets/images/back.png'
 
 const Card = ({ name, number, frontFace, flipCard, unflippedCards, disabledCards}) => {
 
@@ -30,11 +30,13 @@ const Card = ({ name, number, frontFace, flipCard, unflippedCards, disabledCards
       <ReactCardFlip isFlipped={isFlipped}>
         <img
           onClick={hasEvent ? handleClick : null}
-          className='m-[5px] h-[150px] w-[150px] cursor-pointer hover:scale-[0.90] inline-block object-cover'
+          className='m-[5px] h-[170px] w-[150px] cursor-pointer hover:scale-[0.97]
+          transition duration-150 ease-out inline-block object-cover rounded-3xl'
           src={backFace} alt='back-face'/>
         <img
           onClick={hasEvent ? handleClick : null}
-          className='m-[5px] h-[150px] w-[150px] cursor-pointer hover:scale-[0.90] inline-block object-cover' 
+          className='m-[5px] h-[170px] w-[150px] cursor-pointer
+          transition duration-150 ease-out inline-block object-cover rounded-3xl' 
           src={frontFace} alt='front-face'/>
       </ReactCardFlip>
   )
